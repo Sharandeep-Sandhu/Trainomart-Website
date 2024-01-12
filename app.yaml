@@ -1,0 +1,77 @@
+runtime: php55
+threadsafe: true
+api_version: '1'
+
+instance_class: F1
+
+
+inbound_services:
+# [START mail_service]
+- mail
+- mail_bounce
+
+
+runtime_config:
+  document_root: web
+
+
+
+
+handlers:
+- url: /
+  script: /index.html
+ 
+- url: /index.html
+  script: index.html
+
+- url: /about-us.html
+  script: about-us.html
+
+- url: /consulting-services.html
+  script: consulting-services.html  
+ 
+- url: /contact-us.html
+  script: contact-us.html  
+
+- url: /corporate-services.html
+  script: corporate-services.html
+
+
+
+- url: /(.*)\.html$
+  static_files: /\1.html
+  upload: /*\.html$
+
+- url: /contact-process.php
+  script: contact-process.php
+
+- url: /images
+  static_dir: images
+
+- url: /logo
+  static_dir: logo
+  
+- url: /node_modules
+  static_dir: node_modules
+  
+- url: /vendor
+  static_dir: vendor
+  
+- url: /vendor
+  static_dir: vendor
+
+- url: /vendor/autoload.php
+  script: vendor/autoload.php  
+
+
+  
+- url: /(.*\.(gif|png|jpg))$
+  static_files: static/\1
+  upload: static/.*\.(gif|png|jpg)$
+
+automatic_scaling:
+  min_idle_instances: automatic
+  max_idle_instances: automatic
+  min_pending_latency: automatic
+  max_pending_latency: automatic
+service_account: trainomart@appspot.gserviceaccount.com
