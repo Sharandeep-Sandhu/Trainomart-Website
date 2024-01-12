@@ -1,43 +1,60 @@
 <?php
+
+use google\appengine\api\mail\Message;
 use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
 
-// Include PHPMailer autoload file
-require 'vendor/autoload.php';
+// Set email configuration
+$emailTo = 'marttraino@gmail.com'; // Change with your Email address
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Retrieve form data
-    $contactName = $_POST['contactName'];
-    $contactPhone = $_POST['contactPhone'];
-    $contactEmail = $_POST['contactEmail'];
-    $contactMessage = $_POST['contactMessage'];
+// Get form data (make sure to sanitize and validate user inputs)
+$contactName = $_POST["contactName"];
+$contactPhone = $_POST['contactPhone'];
+$contactEmail = $_POST['contactEmail'];
+$contactMessage = isset($_POST["contactMessage"]) ? test_input($_POST['contactMessage']) : "";
 
-    // Create an instance of PHPMailer
-    $mail = new PHPMailer(true);
-
-    try {
-        // Gmail SMTP configuration
-        $mail->isSMTP();
-        $mail->Host = 'smtp.gmail.com';
-        $mail->SMTPAuth = true;
-        $mail->Username = 'marttraino@gmail.com'; // Replace with your Gmail address
-        $mail->Password = 'zbliuivlqxcugjqp'; // Replace with your Gmail password
-        $mail->SMTPSecure = 'tls';
-        $mail->Port = 587;
-
-        // Email content
-        $mail->setFrom($contactEmail, $contactName);
-        $mail->addAddress($contactEmail); // Replace with the recipient's email address
-        $mail->Subject = 'New Contact Form Submission';
-        $mail->Body = "Name: $contactName\nPhone: $contactPhone\nEmail: $contactEmail\nMessage: $contactMessage\n";
-
-        // Send email
-        $mail->send();
-        echo "Thank you! Your message has been sent.";
-    } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
-    }
-} else {
-    echo "Access denied.";
+// Validate email
+if (empty($contactEmail) || !filter_var($contactEmail, FILTER_VALIDATE_EMAIL)) {
+    $emailError = 'Please enter a valid email address.';
+    $hasError = true;
 }
+
+// If no validation errors, proceed to send the email
+if (!$hasError) {
+    try {
+        // Create a new Message
+        $message = new Message();
+
+        // Set sender and recipient
+        $message->setSender($contactEmail);
+        $message->addTo($emailTo);
+        $message->addTo($contactPhone);
+
+
+        // Set email subject
+        $message->setSubject('360DT - Contact form');
+
+        // Set email body (HTML content)
+        $body = "Name: $contactName<br>Phone: $contactPhone<br>Email: $contactEmail<br>Message: $contactMessage";
+        $message->setHtmlBody($body);
+
+        // Send the email
+        $message->send();
+
+        // Redirect to a success page
+        // header("Location: /mail_sent");
+
+    } catch (Exception $e) {
+        // Handle the exception (display a generic error message for now)
+        $error = "Unable to send mail. Error: " . $e->getMessage();
+    }
+}
+
+// Function to sanitize and validate input
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
 ?>

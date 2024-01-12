@@ -1,6 +1,6 @@
 runtime: php55
-threadsafe: true
-api_version: '1'
+# threadsafe: true
+# api_version: '2'
 
 instance_class: F1
 
@@ -74,4 +74,4 @@ automatic_scaling:
   max_idle_instances: automatic
   min_pending_latency: automatic
   max_pending_latency: automatic
-service_account: trainomart@appspot.gserviceaccount.com
+service_account: trainomart2@appspot.gserviceaccount.com
