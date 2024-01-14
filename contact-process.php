@@ -23,7 +23,7 @@ try {
 
     // Set sender and recipient
     $message->setSender($emailTo);
-    $message->addTo($emailTo);
+    $message->addTo($contactEmail);
 
     // Set email subject
     $message->setSubject('TrainoMart - Contact form');
