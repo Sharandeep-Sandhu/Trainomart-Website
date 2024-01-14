@@ -4,8 +4,54 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "baf0b1b659e688a64051c5ee9742a77e",
+    "content-hash": "92b7fc56cc7cc7f9091218cfc3bf9d3b",
     "packages": [
+        {
+            "name": "google/appengine-php-sdk",
+            "version": "1.9.30",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GoogleCloudPlatform/appengine-php-sdk.git",
+                "reference": "6bdf4bcb638782526a6969aa36528ac583cbc3da"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GoogleCloudPlatform/appengine-php-sdk/zipball/6bdf4bcb638782526a6969aa36528ac583cbc3da",
+                "reference": "6bdf4bcb638782526a6969aa36528ac583cbc3da",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "mikey179/vfsstream": "~1",
+                "phpunit/phpunit": "4.6.*",
+                "satooshi/php-coveralls": "dev-master"
+            },
+            "type": "library",
+            "autoload": {
+                "files": [
+                    "google/appengine/runtime/autoloader.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "Apache-2.0"
+            ],
+            "description": "Google App Engine PHP SDK",
+            "homepage": "https://cloud.google.com/appengine/docs/php/",
+            "keywords": [
+                "appengine",
+                "google",
+                "sdk"
+            ],
+            "support": {
+                "forum": "https://groups.google.com/forum/#!forum/google-appengine",
+                "issues": "https://code.google.com/p/googleappengine/wiki/FilingIssues?tm=3",
+                "source": "https://github.com/GoogleCloudPlatform/appengine-php-sdk/tree/master"
+            },
+            "time": "2015-12-08T07:29:30+00:00"
+        },
         {
             "name": "phpmailer/phpmailer",
             "version": "v6.9.1",

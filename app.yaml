@@ -9,7 +9,7 @@ inbound_services:
 # [START mail_service]
 - mail
 - mail_bounce
-
+- warmup
 
 runtime_config:
   document_root: web
@@ -56,22 +56,32 @@ handlers:
   
 - url: /vendor
   static_dir: vendor
-  
-- url: /vendor
-  static_dir: vendor
+
 
 - url: /vendor/autoload.php
   script: vendor/autoload.php  
 
-
+# Serve php scripts.
+- url: /(.+\.php)$
+  script: \1
   
 - url: /(.*\.(gif|png|jpg))$
   static_files: static/\1
   upload: static/.*\.(gif|png|jpg)$
 
+- url: /_ah/mail/.+
+  script: handle_incoming_email.php
+  login: admin
+
+error_handlers:
+  - file: default_error.html
+
+  - error_code: over_quota
+    file: over_quota.html
+
 automatic_scaling:
-  min_idle_instances: automatic
-  max_idle_instances: automatic
+  min_idle_instances: 1
+  max_idle_instances: 10
   min_pending_latency: automatic
   max_pending_latency: automatic
 service_account: trainomart2@appspot.gserviceaccount.com
