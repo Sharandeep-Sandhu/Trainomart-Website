@@ -35,7 +35,13 @@ try {
     // Send the email
     $message->send();
 
-    echo 'Email has been sent successfully';
+    // Display an alert using JavaScript
+    echo '<script>';
+    echo 'alert("Email has been sent successfully");';
+    echo 'window.location.href = "index.html";';  // Redirect to index.html
+    echo '</script>';
 } catch (Exception $e) {
-    echo "Unable to send mail. Error: " . $e->getMessage();
+    // Handle the exception and display an error message
+    echo '<script>alert("Unable to send mail. Error: ' . $e->getMessage() . '");</script>';
 }
+?>
