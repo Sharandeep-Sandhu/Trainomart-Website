@@ -878,7 +878,7 @@ body {
   line-height: 1.6;
   font-weight: 400;
   font-family: effra, Helvetica, Arial, sans-serif;
-  color: #EEA47F; }
+  color: #bf7a58; }
   body.no-scroll {
     overflow: hidden;
     height: 100vh; }
@@ -898,7 +898,7 @@ h1 {
   font-size: 3rem;
   line-height: 1.3;
   font-weight: 700;
-  color: #EEA47F; }
+  color: #bf7a58; }
   @media (min-width: 64rem) {
     h1 {
       font-size: 4rem; } }
@@ -921,7 +921,7 @@ h1 {
   margin-bottom: 1rem; }
 
 .page.home h1 {
-  color: #EEA47F;
+  color: #bf7a58;
   letter-spacing: 0;
   text-transform: none;
   font-size: 3rem; }
@@ -1038,7 +1038,7 @@ pre > code {
       color: #00539c; }
   .button.white-solid {
     background-color: #fff;
-    color: #EEA47F;
+    color: #bf7a58;
     border: 1px solid #fff;
     -webkit-box-shadow: 0 4px 12px rgba(255, 255, 255, 0.5);
     -moz-box-shadow: 0 4px 12px rgba(255, 255, 255, 0.5);
@@ -1060,7 +1060,7 @@ pre > code {
   color: #00539c;
   font-size: 1.75rem; }
   .gform_wrapper .gform_body .gfield label span.gfield_requi#00539c {
-    color: #EEA47F;
+    color: #bf7a58;
     font-weight: 400; }
 
 .gform_wrapper .gform_body .gfmc-row-1-col-1-of-2 {
@@ -2188,7 +2188,7 @@ hr {
           color: #00539c; } }
       .menu-main-menu-container #primary-menu li a {
         text-decoration: none;
-        color: #EEA47F;
+        color: #bf7a58;
         font-weight: 700;
         font-size: 2.8rem; }
         @media (min-width: 900px) {
@@ -2202,7 +2202,7 @@ hr {
             font-size: 1.8rem; } }
 
 .site-footer {
-  background-color: #EEA47F;
+  background-color: #bf7a58;
   box-sizing: border-box;
   padding-top: 6rem;
   padding-bottom: 3rem;
@@ -2401,7 +2401,7 @@ hr {
     .home .page-block ul li a {
       color: #A0A0A0;
       font-size: 1.8rem;
-      color: #EEA47F;
+      color: #bf7a58;
       text-decoration: none; }
 
 .home .home-orange-block {
@@ -2576,7 +2576,7 @@ hr {
       align-items: center;
       justify-content: center;
       padding: 5rem;
-      background-color: #EEA47F;
+      background-color: #bf7a58;
       color: #fff;
       -webkit-box-shadow: inset 0px 0px 30px 10px rgba(0, 0, 0, 0.75);
       -moz-box-shadow: inset 0px 0px 30px 10px rgba(0, 0, 0, 0.75);
@@ -2608,7 +2608,7 @@ hr {
       .about-us .values h3 {
         font-size: 3.6rem; } }
     .about-us .values h3 span {
-      color: #EEA47F; }
+      color: #bf7a58; }
 
 .about-us .team .focus-content {
   margin-bottom: 3rem; }
@@ -2693,10 +2693,10 @@ hr {
     .business-services .what-we-do-wrapper .page-block .content .large {
       font-size: 2.75rem;
       font-weight: 700;
-      color: #EEA47F;
+      color: #bf7a58;
       margin-bottom: 2rem; }
     .business-services .what-we-do-wrapper .page-block .content p {
-      color: #EEA47F; }
+      color: #bf7a58; }
 
 .business-services .testimonial-wrapper {
   margin-top: 18rem;
@@ -2877,7 +2877,7 @@ hr {
   border: 0px solid #E4E4E4;
   padding: 20px 0; }
   .candidate-services .page-block p {
-    color: #EEA47F;
+    color: #bf7a58;
     font-weight: 700;
     font-size: 2rem; }
 
